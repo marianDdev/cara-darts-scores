@@ -9,40 +9,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // const fetchScoresHandler = useCallback(async () => {
-  //   setIsLoading(true);
-  //   setError(null);
-  //   try {
-  //     const response = await fetch(
-  //       'https://cara-darts-scores-default-rtdb.firebaseio.com/scores.json'
-  //     );
-  //     if (!response.ok) {
-  //       throw new Error('Something went wrong!');
-  //     }
-
-  //     const data = await response.json();
-
-  //     const loadedScores = [];
-
-  //     for (const key in data) {
-  //       loadedScores.push({
-  //         id: key,
-  //         amount: data[key].amount,
-  //         date: data[key].date,
-  //       });
-  //     }
-
-  //     setscores(loadedScores);
-  //   } catch (error) {
-  //     setError(error.message);
-  //   }
-  //   setIsLoading(false);
-  // }, []);
-
   const addScoreHandler = useCallback(async (score) => {
     setIsLoading(true);
     setError(null);
-    const response = await fetch(
+    await fetch(
       'https://cara-darts-scores-default-rtdb.firebaseio.com/scores.json',
       {
         method: 'POST',
@@ -74,36 +44,6 @@ function App() {
   useEffect(() => {
     addScoreHandler();
   }, [addScoreHandler]);
-
-  // const addScoreHandler = useCallback(async (score)) {
-  //   const response = await fetch(
-  //     'https://cara-darts-scores-default-rtdb.firebaseio.com/scores.json',
-  //     {
-  //       method: 'POST',
-  //       body: JSON.stringify(score),
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //     }
-  //   );
-
-  //   const GETresponse = await fetch(
-  //     'https://cara-darts-scores-default-rtdb.firebaseio.com/scores.json'
-  //   );
-
-  //   const data = await GETresponse.json();
-  //   const loadedScores = [];
-
-  //   for (const key in data) {
-  //     loadedScores.push({
-  //       id: key,
-  //       amount: data[key].amount,
-  //       date: data[key].date,
-  //     });
-  //   }
-
-  //   setscores(loadedScores);
-  // }
 
   let content = <p>Found no scores.</p>;
 
