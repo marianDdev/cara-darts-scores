@@ -24,7 +24,7 @@ function AddScore(props) {
     <form onSubmit={submitHandler}>
       <div className={classes.control}>
         <label htmlFor='title'>Amount</label>
-        <input type='text' id='title' ref={amountRef} />
+        <input type='number' min='0' id='title' ref={amountRef} />
       </div>
       <button>Add Score</button>
     </form>

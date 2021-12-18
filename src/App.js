@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-import ScoresList from './components/ScoresList';
+import ScoresData from './components/ScoresData';
 import AddScore from './components/AddScore';
 import './App.css';
 
@@ -48,7 +48,7 @@ function App() {
   let content = <p>Found no scores.</p>;
 
   if (scores.length > 0) {
-    content = <ScoresList scores={scores} />;
+    content = <ScoresData scores={scores} />;
   }
 
   if (error) {
