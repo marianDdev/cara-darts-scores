@@ -17,11 +17,11 @@ const ScoresData = (props) => {
         <>
           <LastScore
             key={lastScore.id}
-            title={lastScore.amount}
+            amount={lastScore.amount}
             date={lastScore.date}
           />
-          <ScoresTotal title={scoresSum} />
-          <AverageScore title={averageScore} />
+          <ScoresTotal amount={scoresSum} />
+          <AverageScore amount={averageScore} />
         </>
       }
     </ul>
