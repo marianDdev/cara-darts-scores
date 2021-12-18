@@ -6,7 +6,7 @@ const AverageScore = (props) => {
   return (
     <li className={classes.score}>
       <h2>Your average score</h2>
-      <h2>{props.title}</h2>
+      <h2>{props.amount}</h2>
     </li>
   );
 };
